@@ -60,8 +60,6 @@
                     break;
                 case "ArrowUp":  // up arrow (stop thrust)
                     ship.thrusting = false;
-                    ship.thrust.x = 0; // reset thrust when stopping
-                    ship.thrust.y = 0; // reset thrust when stopping
                     break;
                 case "ArrowRight":  // right arrow (stop rotating right)
                     ship.rot = -0;
@@ -102,8 +100,8 @@
 
             } else {
                 // Apply friction to gradually slow down when not thrusting
-                ship.thrust.x -= FRICTION * ship.thrust.x / FPS; 
-                ship.thrust.y -= FRICTION * ship.thrust.y / FPS; 
+                ship.thrust.x -= FRICTION * ship.thrust.x / FPS;
+                ship.thrust.y -= FRICTION * ship.thrust.y / FPS;
             }
 
             //draw triangle ship
